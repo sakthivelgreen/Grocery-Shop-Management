@@ -1,0 +1,29 @@
+{
+  "name": "shop_sales_accounts_management",
+  "version": "0.0.1",
+  "description": "Grocery Shop Sales, Stock and Accounts Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Stock",
+    "Sales",
+    "Management"
+  ],
+  "author": "Sakthivel J<sakthivelgreen.sk@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7"
+  }
+}
