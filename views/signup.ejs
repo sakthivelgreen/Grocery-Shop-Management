@@ -4,11 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <%- include('./partials/CSS/bootstrap') %>
+        <title>Signup</title>
+        <link rel="stylesheet" href="/CSS/login.css">
 </head>
 
 <body>
-
+    <div class="nav-container">
+        <%- include('./partials/components/nav') %>
+    </div>
+    <div class="container signup-container my-5">
+        <h2 class="text-center p-2">Signup</h2>
+        <form method="post" action="/user/signup">
+            <div class="row mb-3">
+                <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+    <%- include('./partials/JS/bootstrap') %>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 exports.renderHomepage = async (req, res) => {
-    res.render('home');
+    res.render('home', { user: req.user });
 }
 
 exports.renderLoginPage = async (req, res) => {

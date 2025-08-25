@@ -4,11 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <%- include('./partials/CSS/bootstrap') %>
+        <link rel="stylesheet" href="/CSS/login.css">
+        <title>Login</title>
 </head>
 
 <body>
+    <div class="nav-container">
+        <%- include('./partials/components/nav') %>
+    </div>
 
+    <div class="container login-container my-5">
+        <h2 class="text-center p-2">Login</h2>
+        <form method="post" action="/user/login">
+            <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+    <%- include('./partials/JS/bootstrap') %>
 </body>
 
 </html>

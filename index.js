@@ -15,6 +15,7 @@ mongoose.connect(process.env.DATABASE_URI)
 
 // Importing Routers
 const staticRouter = require('./routers/staticRouter');
+const userRouter = require('./routers/userRouter');
 const { isLoggedIn } = require('./middlewares/auth');
 
 //Configuration
@@ -31,6 +32,7 @@ app.use(isLoggedIn)
 
 // Routes
 app.use('/', staticRouter);
+app.use('/user', userRouter);
 
 
 // Listener
