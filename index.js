@@ -3,22 +3,34 @@ require('dotenv').config();
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 const PORT = process.env.PORT;
 
 const app = express();
 
-const staticRouter = require('./routers/staticRouter');
+// Database Connection
+mongoose.connect(process.env.DATABASE_URI)
+    .then(() => console.log("Database Connected."))
+    .catch((err) => console.log(err));
 
-//configuration
+// Importing Routers
+const staticRouter = require('./routers/staticRouter');
+const { isLoggedIn } = require('./middlewares/auth');
+
+//Configuration
 app.set('view engine', 'ejs');
+app.set('views', path.resolve('views'));
 app.use(express.static(path.resolve('public')));
 
-// middlewares
+// Middlewares
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Routers
-app.get('/', staticRouter);
+app.use(isLoggedIn)
+
+// Routes
+app.use('/', staticRouter);
 
 
 // Listener

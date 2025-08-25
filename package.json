@@ -4,7 +4,7 @@
   "description": "Grocery Shop Sales, Stock and Accounts Management",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [
