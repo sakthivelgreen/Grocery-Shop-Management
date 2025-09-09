@@ -11,7 +11,7 @@ async function handleUserLogin(req, res) {
             return res.cookie('token', token).redirect('/');
         }
     } catch (error) {
-        return res.render('login', { error: error });
+        return res.render('Login/login', { error: error });
     }
 }
 
@@ -28,10 +28,10 @@ async function handleUserSignup(req, res) {
                 res.cookie('token', token).redirect('/');
             }
         } catch (error) {
-            res.render('signup', { error: error });
+            res.render('Login/signup', { error: error });
         }
     } catch (error) {
-        res.render('signup', { error: error });
+        res.render('Login/signup', { error: error });
     }
 }
 

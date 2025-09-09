@@ -4,9 +4,9 @@ exports.renderHomepage = async (req, res) => {
 
 exports.renderLoginPage = async (req, res) => {
     if (req.user) return res.redirect('/');
-    res.render('login.ejs');
+    res.render('Login/login');
 }
 exports.renderSignupPage = async (req, res) => {
     if (req.user) return res.redirect('/');
-    res.render('signup.ejs');
+    res.render('Login/signup');
 }
